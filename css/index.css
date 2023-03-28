@@ -1,0 +1,404 @@
+/* index.css是用来美化首页的 */
+* {
+    margin: 0;
+    padding: 0;
+
+    /* 自动內减模式 */
+    box-sizing: border-box;
+}
+
+/* 清除li前面的符号· */
+li {
+    list-style: none;
+}
+
+/* 清除超链接下划线 */
+a {
+    text-decoration: none;
+}
+
+/* .clearfix::before  作用：解决外边距塌陷问题
+外边距塌陷：父子标签，都是块级，子级加margin会影响父级的位置 */
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+/* 转换成table（表格） */
+    display: table;
+}
+
+/* 真正清除浮动的标签 */
+.clearfix:after {
+    clear: both;
+}
+
+body{
+    background-color: #f3f5f7;
+}
+
+/* 版心 */
+.wrapper{
+    width: 1200px;
+
+    /* 版心居中 */
+    margin: 0 auto;
+}
+
+/* 头部-header */
+.header{
+    height: 42px;
+    /* background-color: pink; */
+    margin: 30px auto;
+}
+
+h1 {
+    float: left;
+}
+
+.nav{
+    float: left;
+    margin-left: 79px;
+    height: 40px;
+    /* background-color: green; */
+    
+}
+
+.nav li{
+    float: left;
+    margin-right: 26px;
+}
+
+.nav li a{
+    display: block;
+    padding: 0 9px;
+    height: 42px;
+    /* text-align: center; */
+    line-height: 42px;
+    /* border-bottom: 2px solid #00a4ff; */
+    font-size: 18px;
+    font-family: MicrosoftYaHei;
+    color: #050505;
+}
+
+.nav li a:hover{
+border-bottom: 1px solid #00a4ff;
+}
+
+.search{
+    float: left;
+    /* 此处搜索栏左外边距=59px
+    94px(总)-26px(职业规划右外边距)=9px(职业规划右内边距) */
+    margin-left: 59px;
+    width: 412px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+}
+
+.search input{
+    float: left;
+    /* 左输入框和右搜索加一起的宽度要<=410px */
+    /* 由于后续输入窗口和搜索图在一行内，总的宽度为412px，左右边框线共2px，
+    又由于搜索图固定宽度为50px，所以输入框的宽度为=412-2-50=360px */
+    width: 360px;
+    padding-left: 21px;
+    /* 40px=36px（文字输入区域）+2px（上下边框线各1px） */
+    height: 38px;
+    border: none;
+}
+
+/* 设置input里面placeholder的文字属性 */
+.search input::placeholder{
+    font-size: 14px;
+    color: #bfbfbf;
+}
+
+.search button{
+    float: left;
+    width: 50px;
+    height: 40px;
+    background-image: url(../css/images/btn.png);
+}
+
+.user{
+    float: right;
+    margin-right: 35px;
+    height: 42px;
+    line-height: 42px;
+}
+
+.user img{
+    /* 调节图片垂直对齐方式，middle居中 */
+    vertical-align: middle;
+}
+
+.banner{
+        height: 420px;
+        background-color: #1c036c;
+}
+
+/* .banner .wrapper 是匹配同时拥有 banner 和 wrapper 两个 class 的元素，
+    而且这两个 class 存在特定的父子关系
+    即表示选中banner类下面的wrapper类 */
+
+/* 而.search button只是选择search类下面的button标签 */
+.banner .wrapper{
+    height: 420px;
+    background-image: url(../css/images/banner2.png);
+}
+
+
+/* .banner ,left:选中banner类下面的left类 */
+.banner .left{
+    padding: 0 20px;
+    float: left;
+    width: 190px;
+    height: 420px;
+    background-color: rgba(0,0,0,0.3);
+
+    /* 行高属于控制文字的属性，能继承 */
+    line-height: 42px;    
+}
+
+.banner .right{
+        float: right;
+        margin-top: 50px;
+        width: 228px;
+        height: 300px;
+        background-color: #fff;
+}
+
+/* 设置>位置 */
+.banner .left span{
+    float: right;
+} 
+
+
+.banner .left a{
+    font-size: 14px;
+    color: #fff;
+}
+
+.banner .left a:hover{
+    color: #00b4ff;
+}
+
+h2{
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+}
+
+/* dl标签  dt主题  dd内容 */
+.banner .right .content{
+    padding: 0 18px;
+}
+
+.banner .right .content dl{
+    padding: 12px 0;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.banner .right .content dl dt{
+    font-size: 16px;
+    color: #4e4e4e;
+    font-weight: 700;
+}
+
+.banner .right .content dl dd{
+    font-size: 12px;
+    color: #a5a5a5;
+    font-weight: 700;
+}
+
+.banner .right .all{
+        /* 标签转跨块 */
+        display: block;
+
+        /* margin: 4px 14px; */
+        margin:4px auto;
+        width: 200px;
+        height: 40px;
+        border: solid 1px #00a4ff;
+
+        /* 全部课程——字体样式 */
+        font-size: 16px;
+        font-weight: bold;
+        color: #00a4ff;
+
+        text-align: center;
+        line-height: 40px;
+}
+
+/* 精品推荐 */
+.goods{
+    padding-left: 34px;
+    padding-right: 26px;
+    width: 1200px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
+    line-height: 60px;
+}
+
+.goods .h2{
+    float: left;
+    font-size: 16px;
+    color: #00a4ff;
+    font-weight: normal;
+}
+
+.goods ul{
+    float: left;
+    margin-left: 30px;
+}
+
+.goods ul li{
+    float: left;
+    font-size: 16px;
+    color: #050505;
+}
+
+.goods ul li a{
+    border-left: 1px solid #bfbfbf;
+    padding: 0 30px;
+}
+
+.goods .xingqu{
+    float: right;
+
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+/* 精品推荐课程 */
+.box{
+    margin-top: 35px;
+}
+
+.box .title{
+    height: 40px;
+    /* background-color:pink; */
+}
+
+.box .title .h2{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+    font-weight: normal;
+}
+
+.box .title a{
+    float: right;
+    margin-right: 30px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.box .content li{
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 228px;
+    height: 270px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 0px rgba(118, 118, 118, 0.5);
+}
+
+/* 第5n个外边距为0 */
+.box .content li:nth-child(5n){
+    margin-right: 0;
+}
+
+.box .content li h3{
+    margin: 20px;
+    font-size: 14px;
+    color: #050505;
+
+    /* 对于h标签，要记得使用font-weight：400/normal  去除粗体样式 */
+    font-weight: normal;
+}
+
+.box .content li p{
+    padding: 0 20px;
+    font-size: 12px;
+    color:#999 ;
+}
+
+.box .content li  span{
+    color: #ff7c2d;
+}
+
+
+/* 课程模块  hot  定位小图 */
+.box .content li {
+    position: relative;
+}
+
+/* 定义儿子为hot，则可以找到对应的爹li */
+.box .content li .hot{
+    position: absolute;
+    /* -4px：最右边距超出4px */
+    right: -4px;
+    top: 4px;
+}
+
+
+
+/* 底部版权 */
+.footer{
+    margin-top: 40px;
+    height: 417px;
+    background-color: #fff;
+}
+
+.footer .left{
+    float: left;
+}
+
+.footer .left img{
+    margin-top: 33px;
+}
+
+.footer .left p{
+    margin: 20px 0 15px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.footer .left a{
+
+    /* 将标签转换为行内块 */
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    border: 1px solid #00a4ff;
+
+    font-size: 16px;
+    color: #00a4ff;
+
+    text-align: center;
+    line-height: 36px;
+}
+
+.footer .right{
+    float: right;
+}
+
+.footer .right dl{
+    float: left;
+    margin-top: 32px;
+    margin-left: 120px;
+}
+
+.footer .right dt{
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.footer .right dd{
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #333333;
+}
